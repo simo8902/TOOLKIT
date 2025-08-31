@@ -1,5 +1,6 @@
 # TOOLKIT
 
+# LPMT decoder framework
 fullparser.py currently only works on binary blobs with the "LPMT" FourCC  
 universal format support coming later — includes pain, sorrow, and rage
 

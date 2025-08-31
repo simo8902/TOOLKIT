@@ -1011,8 +1011,6 @@ def parse_lpmt_block(filename):
         if not found:
             current_offset += 4
             
-        entry_idx += 1
-
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("file", nargs="?", default="test.map")

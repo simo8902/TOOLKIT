@@ -1,8 +1,40 @@
 # TOOLKIT
 
-the fullparser.py is only working for binary blob with "LPMT" fourcc tag, it will be later made universal
-includes (tons of pain and sorrow):
-```python parsers = [ ("4x4_matrix", "try_parse_4x4_matrix"), ("3x4_matrix", "try_parse_3x4_matrix"), ("pos_quat_scale", "try_parse_pos_quat_scale"), ("quat_pos_scale", "try_parse_quat_pos_scale"), ("scale_pos_quat", "try_parse_scale_pos_quat"), ("1int+16f", "try_parse_1int_16f"), ("2int+16f", "try_parse_2int_16f"), ("1int+12f", "try_parse_1int_12f"), ("2int+12f", "try_parse_2int_12f"), ("4byte_pad+16f", "try_parse_4byte_pad_16f"), ("8byte_pad+12f", "try_parse_8byte_pad_12f"), ("1short+16f", "try_parse_1short_16f"), ("2short+16f", "try_parse_2short_16f"), ("1byte+16f", "try_parse_1byte_16f"), ("4byte+16f", "try_parse_4byte_16f"), ("transposed_4x4", "try_parse_transposed_4x4"), ("transposed_3x4", "try_parse_transposed_3x4"), ("1int+10f", "try_parse_1int_10f"), ("2int+10f", "try_parse_2int_10f"), ("16byte_pad+16f", "try_parse_16byte_pad_16f"), ("12byte_pad+12f", "try_parse_12byte_pad_12f"), ("3int+16f", "try_parse_3int_16f"), ("4int+12f", "try_parse_4int_12f"), ("euler_angles", "try_parse_euler_angles"), ("axis_angle", "try_parse_axis_angle"), ("dual_quaternion", "try_parse_dual_quaternion"), ("compact_quat", "try_parse_compact_quat"), ("1int+3f+4f+3f", "try_parse_1int_3f_4f_3f"), ("2int+3f+4f+3f", "try_parse_2int_3f_4f_3f"), ("var_header+16f", "try_parse_variable_header_16f"), ("var_header+12f", "try_parse_variable_header_12f"), ("var_header+10f", "try_parse_variable_header_10f"), ("row_3x3+pos+scale", "try_parse_row_major_3x3_plus_pos_scale"), ("col_3x3+pos+scale", "try_parse_col_major_3x3_plus_pos_scale"), ("split_matrix", "try_parse_split_matrix"), ("packed_transform", "try_parse_packed_transform"), ("inverted_4x4", "try_parse_inverted_4x4"), ("decomposed_trans", "try_parse_decomposed_transform"), ("trs_with_pivot", "try_parse_trs_with_pivot"), ("half_precision", "try_parse_half_precision"), ("aligned_64", "try_parse_aligned_64"), ("aligned_80", "try_parse_aligned_80"), ("aligned_96", "try_parse_aligned_96"), ("compressed_quat", "try_parse_compressed_quat"), ("nested_structure", "try_parse_nested_structure"), ("string_prefixed", "try_parse_string_prefixed"), ("double_precision", "try_parse_double_precision"), ("mixed_precision", "try_parse_mixed_precision"), ("bitpacked", "try_parse_bitpacked"), ("morton_encoded", "try_parse_morton_encoded") ] ```
+`fullparser.py` currently only works on binary blobs containing the `"LPMT"` FourCC
+Universal format support coming later. Includes pain, sorrow, and too many layouts to care
 
-Script for printing all FOURCC tags and their pos
-Usage: FOURCC filename.asd (run it from cmd)
+## Supported Layouts (WIP)
+
+- 3x3 + Pos + Scale  
+- 3x4 Matrix  
+- 4x4 Matrix  
+- 4x4 Transposed  
+- 4x4 Inverted  
+- 4x4 + 1/2/4/16 byte pad  
+- 3x4 + 1/2/8/12 byte pad  
+- 1int / 2int / 3int + Matrix  
+- Short / Byte aligned formats  
+- Variable header + 12f / 16f / 10f  
+- Pos + Quat + Scale  
+- Quat + Pos + Scale  
+- Scale + Pos + Quat  
+- Euler Angles  
+- Axis + Angle  
+- Dual Quaternion  
+- Compact Quaternion  
+- Fixed Int Layouts (i16/i32 based)  
+- Decomposed TRS (with pivot or offset)  
+- Split Matrix  
+- Packed Transform  
+- Bitpacked (64-bit)  
+- Morton Encoded  
+- String-prefixed  
+- Double Precision  
+- Mixed Precision  
+- Nested Structures  
+- Other cursed formats from hell
+
+## FourCC Dump Script
+
+`FOURCC filename.asd` - run it from CMD
+Scans file and prints all FourCC tags with their offset

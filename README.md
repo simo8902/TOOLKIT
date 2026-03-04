@@ -1,9 +1,7 @@
 # TOOLKIT
 
 # LPMT decoder framework
-fullparser.py currently only works on binary blobs with the "LPMT" FourCC  
-universal format support coming later — includes pain, sorrow, and rage
-
+fullparser.py currently only works on binary blobs with the "LPMT" FourCC 
 ## Supported Layouts (WIP)
 
 3x3 + Pos + Scale  
@@ -38,5 +36,5 @@ Other cursed formats from hell
 ## FourCC Dump Script
 
 run from CMD  
-FOURCC filename.map  
+FOURCC filename.fileext
 prints all found FourCC tags with offset

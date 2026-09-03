@@ -1,5 +1,9 @@
 # TOOLKIT
 
+New system font compatible with windows powershell ,terminals new and old with ss01 added
+Currently when llm model uses an custom MCP tool, it makes git diffs showing the entire file, this annoyed me and I wrote line encoder fixing script, just cuz im bored
+
+
 # LPMT decoder framework
 fullparser.py currently only works on binary blobs with the "LPMT" FourCC 
 ## Supported Layouts (WIP)
